@@ -8,6 +8,7 @@ use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+
 class AuthController extends Controller {
     // register a new user method
     public function register(RegisterRequest $request) {
