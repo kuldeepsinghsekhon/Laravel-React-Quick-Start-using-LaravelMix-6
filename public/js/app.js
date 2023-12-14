@@ -4386,9 +4386,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../routes */ "./resources/js/routes.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../contexts/AuthContext */ "./resources/js/contexts/AuthContext.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -4396,15 +4397,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("main", {
-    children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.RouterProvider, {
-      router: _routes__WEBPACK_IMPORTED_MODULE_2__["default"]
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_3__.AuthProvider, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.RouterProvider, {
+        router: _routes__WEBPACK_IMPORTED_MODULE_2__["default"]
+      })
+    })
   });
 }
 var container = document.getElementById('app');
 var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container); // createRoot(container!) if you use TypeScript
-root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(App, {
+root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(App, {
   tab: "home"
 }));
 
@@ -4529,26 +4532,27 @@ function DefaultLayout() {
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            _context2.prev = 0;
-            _context2.next = 3;
+            console.log("logout");
+            _context2.prev = 1;
+            _context2.next = 4;
             return _axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('/logout');
-          case 3:
+          case 4:
             resp = _context2.sent;
             if (resp.status === 200) {
               localStorage.removeItem('user');
               window.location.href = '/';
             }
-            _context2.next = 10;
+            _context2.next = 11;
             break;
-          case 7:
-            _context2.prev = 7;
-            _context2.t0 = _context2["catch"](0);
+          case 8:
+            _context2.prev = 8;
+            _context2.t0 = _context2["catch"](1);
             console.log(_context2.t0);
-          case 10:
+          case 11:
           case "end":
             return _context2.stop();
         }
-      }, _callee2, null, [[0, 7]]);
+      }, _callee2, null, [[1, 8]]);
     }));
     return function handleLogout() {
       return _ref2.apply(this, arguments);
@@ -4759,9 +4763,30 @@ function About() {
 /*!******************************************!*\
   !*** ./resources/js/pages/ErrorPage.jsx ***!
   \******************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ About)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
+
+
+function About() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "text-6xl font-bold text-slate-600",
+      children: "Error Page"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("hr", {
+      className: "bg-slate-400 h-1 w-full my-4"
+    })]
+  });
+}
 
 /***/ }),
 
@@ -5227,7 +5252,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Profile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Profile */ "./resources/js/pages/Profile.jsx");
 /* harmony import */ var _pages_Register__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Register */ "./resources/js/pages/Register.jsx");
 /* harmony import */ var _pages_ErrorPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/ErrorPage */ "./resources/js/pages/ErrorPage.jsx");
-/* harmony import */ var _pages_ErrorPage__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_pages_ErrorPage__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _components_ProtectedLayout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ProtectedLayout */ "./resources/js/components/ProtectedLayout.jsx");
 /* harmony import */ var _components_GuestLayout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/GuestLayout */ "./resources/js/components/GuestLayout.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -5243,16 +5267,16 @@ __webpack_require__.r(__webpack_exports__);
 var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.createBrowserRouter)([{
   path: '/',
   element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_GuestLayout__WEBPACK_IMPORTED_MODULE_6__["default"], {}),
-  errorElement: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((_pages_ErrorPage__WEBPACK_IMPORTED_MODULE_4___default()), {}),
+  errorElement: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_ErrorPage__WEBPACK_IMPORTED_MODULE_4__["default"], {}),
   children: [{
     path: "/",
     element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_Login__WEBPACK_IMPORTED_MODULE_0__["default"], {})
   }, {
-    path: "about",
-    element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_About__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-  }, {
     path: 'register',
     element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_Register__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+  }, {
+    path: "about",
+    element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_About__WEBPACK_IMPORTED_MODULE_1__["default"], {})
   }]
 }, {
   path: '/',
@@ -5260,6 +5284,9 @@ var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.createBrowserRoute
   children: [{
     path: '/profile',
     element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_Profile__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+  }, {
+    path: "about",
+    element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_About__WEBPACK_IMPORTED_MODULE_1__["default"], {})
   }]
 }]);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);

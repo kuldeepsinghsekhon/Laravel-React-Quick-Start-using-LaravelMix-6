@@ -31,6 +31,7 @@ export default function DefaultLayout() {
 
 	// logout user
 	const handleLogout = async () => {
+		console.log("logout");
 		try {
 			const resp = await axios.post('/logout');
 			if (resp.status === 200) {

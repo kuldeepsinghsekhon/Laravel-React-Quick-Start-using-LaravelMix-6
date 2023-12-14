@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+//Route::any('{all}', 'App\Http\Controllers\HomeController@index')->where('all', '^(?!api).*$');
+Route::get('/{path?}', [
+    'uses' => 'App\Http\Controllers\HomeController@index',
+    'as' => 'react',
+    'where' => ['path' => '.*']
+]);
